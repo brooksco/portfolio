@@ -135,6 +135,8 @@ p {
 }
 
 #main-left {
+	-webkit-filter: brightness(100%);
+	filter: brightness(100%);
 	// background-image: url("../img/code.png");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -143,6 +145,8 @@ p {
 
 
 #main-right {
+	-webkit-filter: brightness(100%);
+	filter: brightness(100%);
 	// background-image: url("../img/rainier.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -231,6 +235,20 @@ footer {
 		font-family: "Georgia", serif;
 		display: block;
 		text-align: center;
+	}
+}
+
+.email {
+	padding: .25em 0;
+	font-size: 80%;
+	color: #555;
+	font-family: "Georgia", serif;
+	display: block;
+	text-align: center;
+
+	&:hover {
+		text-decoration: underline;
+		color: #555;
 	}
 }
 
