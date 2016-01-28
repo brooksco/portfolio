@@ -1,9 +1,14 @@
 $(document).foundation();
 
-
-
-
 $(document).ready(function() {
+
+	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
+	// So replace the videos with images
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$("#main-left-video, #main-right-video").remove();
+ 		$("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
+ 		$("#main-right").css({ "background" : "url(img/rainierunderthemoon.jpg) no-repeat bottom center", "background-size" : "cover" });
+	}
 
 	// Index page
 	// Handlers for changing brightness on hover (mouse enter and mouse leave)
