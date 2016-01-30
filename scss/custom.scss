@@ -1,62 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,700);
 
-// Variables
-
-$blue: #2199e8;
-$grey: #eee;
-
-// Mixins
-
-@mixin transition($transition...) {
-	-moz-transition:    $transition;
-	-o-transition:      $transition;
-	-webkit-transition: $transition;
-	transition:         $transition;
-}
-@mixin transition-property($property...) {
-	-moz-transition-property:    $property;
-	-o-transition-property:      $property;
-	-webkit-transition-property: $property;
-	transition-property:         $property;
-}
-@mixin transition-duration($duration...) {
-	-moz-transition-property:    $duration;
-	-o-transition-property:      $duration;
-	-webkit-transition-property: $duration;
-	transition-property:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-	-moz-transition-timing-function:    $timing;
-	-o-transition-timing-function:      $timing;
-	-webkit-transition-timing-function: $timing;
-	transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-	-moz-transition-delay:    $delay;
-	-o-transition-delay:      $delay;
-	-webkit-transition-delay: $delay;
-	transition-delay:         $delay;
-}
-
-
-.two-col {
-	-moz-column-count: 2;
-	-moz-column-gap: 2em;
-	-webkit-column-count: 2;
-	-webkit-column-gap: 2em;
-	column-count: 2;
-	column-gap: 2em;
-
-	@include breakpoint(small only) {
-		-moz-column-count: 1;
-		-webkit-column-count: 1;
-		column-count: 1;
-	}
-}
-
-// End Mixins
-
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 500;
@@ -116,6 +59,7 @@ p {
 
 .main-box {
 	color: #FFFFFF !important;
+	height: 100%;
 	background: black;
 	display: flex;
 	overflow: hidden;
@@ -137,6 +81,7 @@ p {
 
 	@include breakpoint(small only) {
 		filter: brightness(100%);
+		height: 50%;
 	}
 
 }
@@ -222,11 +167,11 @@ p {
 
 #main-right-img {
 	height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    width: auto;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	width: auto;
 }
 
 #main-left {
@@ -237,8 +182,8 @@ p {
  //    z-index: -1;
  //    width: auto;
 
-    background: url(../img/code.jpg) no-repeat center center fixed; 
-  	background-size: cover;
+ background: url(../img/code.jpg) no-repeat center center fixed; 
+ background-size: cover;
 
 }
 
@@ -329,6 +274,18 @@ footer {
  	0% {
  		opacity: 0;
  		transform: translate3d(0, 100%, 0);
+ 	}
+
+ 	100% {
+ 		opacity: 1;
+ 		transform: none;
+ 	}
+ }
+
+  @keyframes fadeInDown {
+ 	0% {
+ 		opacity: 0;
+ 		transform: translate3d(0, -100%, 0);
  	}
 
  	100% {
@@ -435,6 +392,33 @@ footer {
 		max-width: 1260px;
 		margin: auto;
 	}
+
+	@include breakpoint(small only) {
+		animation-name: fadeIn;
+		margin-top: $mobile-nav-height;
+	}
+
+}
+
+@media (max-width: 699px) {
+	#name-floater {
+		position: inherit;
+		padding-bottom: .75em;
+		animation-name: fadeIn;
+
+		p {
+			// font-size: .9em;
+		}
+
+		em {
+			padding: 0 .25em;
+		}
+
+	}
+
+	.photo-wrapper {
+		padding-bottom: 0;
+	}
 }
 
 #photography-footer {
@@ -471,7 +455,6 @@ footer {
 	padding: 0 .5em;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
-	// color: #ff0083;
 
 	&:last-of-type {
 		padding-right: 0;
@@ -506,26 +489,6 @@ footer {
 	@include transition(.5s all);
 
 	opacity: .5;
-}
-
-@media (max-width: 699px) {
-	#name-floater {
-		position: inherit;
-		padding-bottom: .75em;
-
-		p {
-			font-size: .9em;
-		}
-
-		em {
-			padding: 0 .25em;
-		}
-
-	}
-
-	.photo-wrapper {
-		padding-bottom: 0;
-	}
 }
 
 
@@ -565,6 +528,10 @@ footer {
 
 .dev-header {
 	text-align: right;
+
+	@include breakpoint(small only) {
+		font-size: 1.5em;
+	}
 }
 
 .dev-section {
@@ -627,6 +594,20 @@ footer {
 
 	a {
 		text-decoration: none;
+
+		@include breakpoint(small only) {
+			display: none;
+
+			.project-image {
+				width: 100%;
+			}
+
+			&:first-of-type {
+				display: block;
+				width: 100%;
+
+			}
+		}
 	}
 
 }
@@ -647,12 +628,23 @@ footer {
 	&:hover {
 		box-shadow: 0 0 10px 1px $blue;
 	}
+
+	// @include breakpoint(small only) {
+	// 	width: 50%;
+	// }
 }
 
 #dev-footer {
 	.footer-links {
 		text-align: center;
 	}
+}
+
+#skill-list {
+	list-style: none;
+	font-family: "Raleway", sans-serif;
+	font-weight: 300;
+	font-size: 1.25em;
 }
 
 
@@ -697,10 +689,48 @@ footer {
 
 	@include breakpoint(small only) {
 		padding: 1.5em;
+		margin-top: $mobile-nav-height;
+	}
+}
+
+#mobile-nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	padding: 1em 0;
+	background: black;
+	color: white;
+	opacity: .85;
+	width: 100%;
+	text-align: center;
+	height: $mobile-nav-height;
+
+	a {
+		color: white;
+		padding: 0 .5em;
+		text-transform: uppercase;
+		font-family: 'Raleway', sans-serif;
+		font-size: .9em;
+		font-weight: 500;
+		opacity: .5;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.active {
+		opacity: 1;
+	}
+
+	@include breakpoint(small only) {
+		display: inherit;
 	}
 }
 
 .header-links {
+	display: inherit;
 	float: right;
 	margin-top: -2.5em;
 
@@ -717,11 +747,19 @@ footer {
 		&:last-child {
 			margin-right: 0;
 		}
+
+		&:hover {
+			opacity: .75;
+		}
 	}
 
 	@include breakpoint(medium down) {
 		float: none;
 		margin-top: .75em;
+	}
+
+	@include breakpoint(small only) {
+		display: none;
 	}
 }
 

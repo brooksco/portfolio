@@ -6,8 +6,11 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-sass": "^2.1.0"
+    "gulp-sass": "node_modules/gulp-sass",
+    "merge-stream": "^1.0.0"
   },
   "scripts": {
     "start": "gulp",

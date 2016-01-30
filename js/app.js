@@ -8,6 +8,7 @@ $(document).ready(function() {
 		$("#main-left-video, #main-right-video").remove();
  		$("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
  		$("#main-right").css({ "background" : "url(img/rainierunderthemoon.jpg) no-repeat bottom center", "background-size" : "cover" });
+ 		$("#artdev-video").replaceWith("<img src='img/artdev_loop.gif' alt='' />");
 	}
 
 	// Index page
