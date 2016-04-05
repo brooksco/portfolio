@@ -15,7 +15,6 @@ $(document).ready(function() {
 		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 	}
 
-	
 
 	// Index page
 	// Handlers for changing brightness on hover (mouse enter and mouse leave)

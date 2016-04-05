@@ -76,4 +76,13 @@ $mobile-nav-height: 3.5rem;
 	}
 }
 
+
+// Mixin for ratio dimensions    
+@mixin viewport-ratio($x, $y) {
+  width: 100vw;
+  height: $y * 100vw / $x;
+  max-width: $x / $y * 100vh;
+  max-height: 100vh;
+}
+
 // End Mixins
