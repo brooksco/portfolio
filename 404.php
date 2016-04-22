@@ -4,7 +4,7 @@
   <title>What is lost can be found again (404)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style type="text/css">
-    
+
     body { 
       background-color: #242b2b; 
       color: white; 
@@ -22,6 +22,7 @@
     p { 
       font-size: 1.5em; 
       line-height: 1.5em;
+      margin: .5em 0em 0em 0em;
     }
 
     #bear-bearrier {
@@ -40,10 +41,6 @@
       margin-left: auto; 
       margin-right: auto;
       padding: 0 2em 0 2em;
-    }
-
-    #bearror-of-bad-news {
-      padding: 3em 0em 0em .25em;
     }
 
     #andy {
@@ -70,7 +67,7 @@
       }
 
       #bearror-of-bad-news {
-        padding: 1.5em 0 0 0;
+        margin: 1.5em 0 0 0;
       }
 
       #andy {
