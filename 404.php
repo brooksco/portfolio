@@ -61,7 +61,7 @@
 
     @media (max-width: 620px) {
       #bear-bearrier {
-        margin-top: 1.5em;
+        margin-top: 1.2em;
         display: block;
         height: auto;
       }
