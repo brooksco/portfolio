@@ -67,7 +67,7 @@
       }
 
       #bearror-of-bad-news {
-        margin: 1.5em 0 1.5em 0;
+        margin: 1.2em 0 1.2em 0;
       }
 
       #andy {
