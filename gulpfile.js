@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['js/masonary.min.js', 'js/enquire.min.js', 'js/jquery.waypoints.min.js', 'js/lightbox.min.js', 'js/app.js'])
+  return gulp.src(['bower_components/jquery/dist/jquery.js', 'bower_components/what-input/what-input.js', 'bower_components/foundation-sites/dist/foundation.js', 'js/masonary.min.js', 'js/enquire.min.js', 'js/jquery.waypoints.min.js', 'js/lightbox.min.js', 'js/app.js'])
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'))
