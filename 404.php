@@ -67,7 +67,7 @@
       }
 
       #bearror-of-bad-news {
-        margin: 1.5em 0 0 0;
+        margin: 1.5em 0 1.5em 0;
       }
 
       #andy {
@@ -81,7 +81,7 @@
       }
 
       p {
-        font-size: 1.25em;
+        font-size: 1.1em;
       }
     }
 
