@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>What is lost can be found again (404)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style type="text/css">
   body { 
     background-color: #242b2b; 
