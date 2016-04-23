@@ -546,14 +546,36 @@ footer {
 	}
 }
 
-#dev-description-section {
-	margin-bottom: 3em;
-	padding: 0 1.5em;
-
+.project-section {
+	.small-12 {
+		padding: 0;
+	}
 }
+
+
+#devDescriptionSection {
+	margin-bottom: 3em;
+	padding: 0 .5rem;
+}
+
+#devDescription {
+	@include breakpoint(small only) {
+		display: inline;
+	}
+}
+
 
 #recent-section {
 	margin-bottom: 1em;
+
+	@include breakpoint(small only) {
+		.columns {
+			padding: 0;
+		}
+		p {
+			padding: 0rem 1.5rem 0rem 1.5rem;
+		}
+	}
 }
 
 .color-bar {
@@ -824,9 +846,29 @@ footer {
 	}
 }
 
-.me-img-wrapper {
+#codeHeadWrapper {
 	width: auto;
-	max-width: 200px;
+	max-width: 180px;
+	margin: auto;
+
+	// margin-left: auto;
+	// margin-right: 5%;
+
+	@include breakpoint(small only) {
+		margin-right: 0;
+	}
+}
+
+#smallCodeHeadWrapper {
+	width: 100px;
+	margin: .5em 1em .5em 0em;
+	float: left;
+}
+
+#meHeadWrapper {
+	width: auto;
+	max-width: 180px;
+	// margin: auto;
 
 	margin-left: auto;
 	margin-right: 5%;
@@ -836,9 +878,8 @@ footer {
 	}
 }
 
-#dev-me-img-wrapper {
-	margin: auto;
-	max-width: 180px;
+#smallMeWrapper {
+
 }
 
 #about-me-img {
