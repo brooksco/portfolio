@@ -734,10 +734,9 @@ footer {
 	display: none;
 	position: fixed;
 	top: 0;
-	z-index: 1000;
+	z-index: 100;
 	padding: 1em 1.5em;
 	width: 100%;
-	// background: rgba(238, 238, 238, .95);
 	background: rgba(255, 255, 255, .95);
 
 	.active {
