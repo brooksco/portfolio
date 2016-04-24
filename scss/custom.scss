@@ -590,8 +590,9 @@ footer {
 	}
 }
 
+// Recent section
 
-#recent-section {
+#recent {
 	margin-bottom: 1em;
 
 	@include breakpoint(small only) {
@@ -599,12 +600,42 @@ footer {
 			padding: 0;
 			margin-bottom: 1em;
 		}
-		p {
-			margin-top: .25em;
+
+		h5 {
+			margin-top: .5em;
 			padding: 0rem 1.5rem 0rem 1.5rem;
 		}
+
+		p {
+			padding: 0rem 1.5rem 0rem 1.5rem;
+		}
+
 	}
 }
+
+.recent-section {
+	h5 {
+		font-weight: normal;
+    	font-family: 'Georgia', serif;
+    	font-size: 1em;
+	}
+
+	p {
+		font-size: .9em;
+    	margin-bottom: 1.5em;
+	}
+}
+
+.recent-section_image-wrapper {
+	min-height: 15rem;
+	overflow: hidden;
+
+	@include breakpoint(medium down) {
+		min-height: auto;
+	}
+}
+
+// End recent section
 
 .color-bar {
 	background: $grey;
@@ -677,15 +708,6 @@ footer {
 	font-family: "Raleway", sans-serif;
 	font-weight: 300;
 	font-size: 1.25em;
-}
-
-.recent-content-wrapper {
-	min-height: 15rem;
-	overflow: hidden;
-
-	@include breakpoint(medium down) {
-		min-height: auto;
-	}
 }
 
 // Vimeo embed
