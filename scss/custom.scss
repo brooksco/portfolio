@@ -602,7 +602,6 @@ footer {
 		}
 
 		h5 {
-			margin-top: .5em;
 			padding: 0rem 1.5rem 0rem 1.5rem;
 		}
 
@@ -631,7 +630,8 @@ footer {
 	overflow: hidden;
 
 	@include breakpoint(medium down) {
-		min-height: auto;
+		min-height: initial;
+		margin-bottom: .5em;
 	}
 }
 
