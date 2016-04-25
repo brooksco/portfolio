@@ -623,6 +623,18 @@ footer {
 		min-height: initial;
 		margin-bottom: .5em;
 	}
+
+	// img {
+	// 	-webkit-transition: all .15s ease-in-out;
+	// 	-moz-transition: all .15s ease-in-out;
+	// 	-ms-transition: all .15s ease-in-out;
+	// 	-o-transition: all .15s ease-in-out;
+	// 	transition: all .15s ease-in-out;
+
+	// 	&:hover {
+	// 		opacity: .85;
+	// 	}
+	// }
 }
 
 // End recent section
@@ -720,10 +732,6 @@ footer {
 	&:hover {
 		box-shadow: 0 0 10px 1px $blue;
 	}
-
-	// @include breakpoint(small only) {
-	// 	width: 50%;
-	// }
 }
 
 #dev-footer {
