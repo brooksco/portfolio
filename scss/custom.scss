@@ -377,7 +377,6 @@ footer {
  	padding: 1em 1.5em 1.5em 1.5em;
  	position: fixed;
  	bottom: 0;
-	// color: rgba(255, 255, 255, .75);
 	z-index: 100;
 	width: 100%;
 
@@ -396,6 +395,10 @@ footer {
 	h2 {
 		margin-left: .75rem;
 		color: white;
+
+		@include breakpoint(small only) {
+			margin-left: .6rem;
+		}
 
 		a {
 			color: white;
@@ -418,6 +421,7 @@ footer {
 	@include breakpoint(small only) {
 		animation-name: fadeIn;
 		margin-top: $mobile-nav-height;
+		padding-top: 1.5rem;
 	}
 
 }
@@ -427,10 +431,6 @@ footer {
 		position: inherit;
 		padding-bottom: .75em;
 		animation-name: fadeIn;
-
-		p {
-			// font-size: .9em;
-		}
 
 		strong {
 			padding: 0 .25em;
@@ -459,7 +459,8 @@ footer {
 		float: left;
 
 		@include breakpoint(small only) {
-			float: none;
+			// float: none;
+			display: none;
 		}
 	}
 
