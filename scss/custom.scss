@@ -916,6 +916,17 @@ footer {
 	@include breakpoint(small only) {
 		display: inherit;
 	}
+
+}
+
+#mobile-nav--light {
+	@extend #mobile-nav;
+
+	background: #eee;
+
+	a {
+		color: black;
+	}
 }
 
 .header-links {
