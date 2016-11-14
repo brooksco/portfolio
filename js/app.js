@@ -10,6 +10,8 @@ $(document).ready(function() {
 
 	if (isSafari) {
 		$(".text-holder").addClass("safari");
+	} else {
+		$(".text-holder").addClass("safari");
 	}
 
 	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
