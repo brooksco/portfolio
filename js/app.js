@@ -9,7 +9,7 @@ $(document).ready(function() {
 	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || !isChrome && !isOpera && window.webkitAudioContext !== undefined;
 
 	if (isSafari) {
-		// $(".text-holder").addClass("safari");
+		$(".text-holder").addClass("safari");
 	}
 
 	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
