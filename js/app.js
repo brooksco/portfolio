@@ -10,7 +10,15 @@ $(document).ready(function() {
 
 	if (isSafari) {
 		$(".text-holder").addClass("safari");
+
+		var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+		if (isIOS) {
+			$(".text-holder").addClass("ios");
+		}
 	}
+
+
 
 	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
 	// So replace the videos with images

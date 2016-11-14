@@ -86,8 +86,6 @@ p {
 		position: fixed;
 
 		width: 50%;
-		line-height: 0;
-
 	}
 
 	&:hover {
@@ -101,7 +99,7 @@ p {
 
 		h1 {
 			position: inherit;
-		width: 100%;
+			width: 100%;
 		}
 	}
 
@@ -115,8 +113,6 @@ p {
 	justify-content: center;
 		// width: 100%;
 	}
-
-
 
 	#main-left {
 		-webkit-filter: brightness(100%);
@@ -147,28 +143,34 @@ p {
 }
 
 .safari {
-	position: inherit !important;
+	position: inherit;
 
-	@include breakpoint(small only) {
-		// width: 100%;
+	h1 {
+		line-height: 0;
+	}
+}
+
+.ios {
+
+	h1 {
+		position: inherit;
+		width: auto;
+		line-height: 1em;
 	}
 }
 
 .video { 
-	// position: fixed;
-	// top: 0;
 	z-index: -1;
- // height: 100%;
- width: 100vw;
- height: 100vh;
- max-height: 100vh;
- max-width: 50vw;
- object-fit: cover;
+	width: 100vw;
+	height: 100vh;
+	max-height: 100vh;
+	max-width: 50vw;
+	object-fit: cover;
 
- @include breakpoint(small only) {
- 	max-width: 100vw;
- 	max-height: 50vh;
- }
+	@include breakpoint(small only) {
+		max-width: 100vw;
+		max-height: 50vh;
+	}
 
 }
 
