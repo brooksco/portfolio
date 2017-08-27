@@ -39,8 +39,8 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
   return gulp.src([
     'bower_components/jquery/dist/jquery.js', 
-    'bower_components/what-input/what-input.js', 
-    'bower_components/foundation-sites/dist/js/foundation.js', 
+    'node_modules/what-input/what-input.js', 
+    'node_modules/foundation-sites/dist/js/foundation.js', 
     'js/masonary.min.js', 
     'js/enquire.min.js', 
     'js/jquery.waypoints.min.js', 
