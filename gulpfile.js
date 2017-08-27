@@ -37,13 +37,22 @@ gulp.task('sass', function() {
 
 // Javascript
 gulp.task('js', function() {
-  return gulp.src(['bower_components/jquery/dist/jquery.js', 'node_modules/what-input/what-input.js', 'node_modules/foundation-sites/dist/foundation.js', 'js/masonary.min.js', 'js/enquire.min.js', 'js/jquery.waypoints.min.js', 'js/lightbox.min.js', 'js/app.js'])
+  return gulp.src([
+    'bower_components/jquery/dist/jquery.js', 
+    'bower_components/what-input/what-input.js', 
+    'bower_components/foundation-sites/dist/js/foundation.js', 
+    'js/masonary.min.js', 
+    'js/enquire.min.js', 
+    'js/jquery.waypoints.min.js', 
+    'js/lightbox.min.js', 
+    'js/app.js'
+    ])
   .pipe(concat('app.min.js'))
   .pipe(uglify())
   .pipe(gulp.dest('js'))
 });
 
-// Partials
+// Nunjucks (partials)
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
   return gulp.src('html/**')
