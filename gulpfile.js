@@ -11,6 +11,7 @@ var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var nunjucksRender = require('gulp-nunjucks-render');
+var data = require('gulp-data');
 
 // Stylesheets
 gulp.task('sass', function() {
@@ -46,10 +47,14 @@ gulp.task('js', function() {
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
   return gulp.src('html/**')
+   // Adding data to Nunjucks
+   .pipe(data(function() {
+    return require('./data.json')
+  }))
   // Renders template with nunjucks
   .pipe(nunjucksRender({
-      path: ['html/']
-    }))
+    path: ['html/']
+  }))
   // output files in app folder
   .pipe(gulp.dest('./'))
 });
@@ -57,5 +62,5 @@ gulp.task('nunjucks', function() {
 gulp.task('default', ['sass'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
   gulp.watch(['js/app.js'], ['js']);
-  gulp.watch(['html/**'], ['nunjucks']);
+  gulp.watch(['html/**', 'data.json'], ['nunjucks']);
 });

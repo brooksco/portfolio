@@ -3,7 +3,7 @@ $(document).foundation();
 $(document).ready(function() {
 
 	// Flex and fixed don't play the same in Safari as they do in Chrome and Firefox
-	// So check, and if it's safair, add an extra class to fix text positioning issues
+	// So check, and if it's safari, add an extra class to fix text positioning issues
 	var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 	var isChrome = !!window.chrome && !!window.chrome.webstore;
 	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || !isChrome && !isOpera && window.webkitAudioContext !== undefined;
@@ -18,8 +18,6 @@ $(document).ready(function() {
 		}
 	}
 
-
-
 	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
 	// So replace the videos with images
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -32,7 +30,6 @@ $(document).ready(function() {
 		// Otherwise fade in the videos
 		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 	}
-
 
 	// Index page
 	// Handlers for changing brightness on hover (mouse enter and mouse leave)
@@ -115,6 +112,5 @@ $(document).ready(function() {
 	$( ".dev-video" ).mouseleave(function() {
 		$(this)[0].pause();
 	});
-
 
 });

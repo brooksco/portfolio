@@ -15,6 +15,7 @@
     "nunjucks": "^3.0.1"
   },
   "devDependencies": {
+    "gulp-data": "^1.2.1",
     "gulp-nunjucks-render": "^2.2.1",
     "gulp-sass": "^3.1.0"
   },
