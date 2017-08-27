@@ -1,6 +1,11 @@
 // @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,700);
 
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 500;
 }
@@ -201,6 +206,7 @@ p {
 
 .footer-links {
 	margin: 3em 0;
+	text-align: center;
 
 	a {
 		display: inline-block;
@@ -777,12 +783,6 @@ footer {
 	}
 }
 
-#dev-footer {
-	.footer-links {
-		text-align: center;
-	}
-}
-
 #skill-list {
 	list-style: none;
 	font-family: "Raleway", sans-serif;
@@ -989,8 +989,6 @@ footer {
 #meWrapper {
 	width: auto;
 	max-width: 180px;
-	// margin: auto;
-
 	margin-left: auto;
 	margin-right: 5%;
 
@@ -1000,12 +998,6 @@ footer {
 
 	img {
 		border-radius: 50%;
-
-		// transform: rotate(-15deg);
-		// -o-transform: rotate(-15deg);
-		// -ms-transform: rotate(-15deg);
-		// -moz-transform: rotate(-15deg);
-		// -webkit-transform: rotate(-15deg);
 	}
 	
 }
@@ -1031,12 +1023,6 @@ footer {
 #smallMeWrapper {
 	img {
 		border-radius: 50%;
-
-		// transform: rotate(-15deg);
-		// -o-transform: rotate(-15deg);
-		// -ms-transform: rotate(-15deg);
-		// -moz-transform: rotate(-15deg);
-		// -webkit-transform: rotate(-15deg);
 	}
 }
 
@@ -1053,16 +1039,6 @@ footer {
 	&:hover {
 		opacity: .75;
 	}
-}
-
-#about-footer-links {
-	@include breakpoint(small only) {
-		text-align: center;
-	}
-}
-
-#about-footer {
-	padding-top: 2em;
 }
 
 // End about page
