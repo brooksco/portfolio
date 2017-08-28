@@ -1,17 +1,17 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
 
-var sassPaths = [
-'node_modules/foundation-sites/scss',
-'bower_components/motion-ui/src'
-];
-
 var merge = require('merge-stream');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var nunjucksRender = require('gulp-nunjucks-render');
 var data = require('gulp-data');
+
+var sassPaths = [
+'node_modules/foundation-sites/scss',
+'bower_components/motion-ui/src'
+];
 
 // Stylesheets
 gulp.task('sass', function() {
@@ -26,7 +26,9 @@ gulp.task('sass', function() {
     browsers: ['last 2 versions', 'ie >= 9']
   }));
 
-  cssStream = gulp.src(['css/app.css', 'css/lightbox.css'])
+  cssStream = gulp.src([
+    'css/app.css', 
+    'css/jquery.fancybox.css'])
   .pipe(cssnano());
 
   return merge(sassStream, cssStream)
@@ -44,7 +46,7 @@ gulp.task('js', function() {
     'js/masonary.min.js', 
     'js/enquire.min.js', 
     'js/jquery.waypoints.min.js', 
-    'js/lightbox.min.js', 
+    'js/jquery.fancybox.js', 
     'js/app.js'
     ])
   .pipe(concat('app.min.js'))

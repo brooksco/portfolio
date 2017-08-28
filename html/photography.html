@@ -2,55 +2,52 @@
 {% set bodyClass = "black" %}
 {% include "partials/head.html" %}
 
-<div id="photographer-page">
+<nav class="mobile-nav">
+  <a href="about">About</a>
+  <a href="development">Development</a>
+  <a href="photography" class="active">Photography</a>
+</nav>
 
-  <nav class="mobile-nav">
-    <a href="about">About</a>
-    <a href="development">Development</a>
-    <a href="photography" class="active">Photography</a>
-  </nav>
+<div id="name-floater">
+  <div>
+    <h2 id="name-header" class="clean-header">
+      <a href="/">
+        <strong>Colin Brooks</strong>
+      </a>
+      <span class="page-header scene_element_long scene_element--fadein"> | Photography</span>
+    </h2>
 
-  <div id="name-floater">
-    <div>
-      <h2 id="name-header" class="clean-header">
-        <a href="/">
-          <strong>Colin Brooks</strong>
-        </a>
-        <span class="page-header scene_element_long scene_element--fadein"> | Photography</span>
-      </h2>
+    <nav id="photography-header-links" class="header-links">
+      <a href="about">About</a>
+      <a href="development" rel="prerender prefetch">Development</a>
+    </nav>
 
-      <nav id="photography-header-links" class="header-links">
-        <a href="about">About</a>
-        <a href="development" rel="prerender prefetch">Development</a>
+    <p id="photo-words">
+      For four years I worked at the Grinnell College Darkroom, managing it for two. I've worked with Youth In Focus, mentoring at-risk youth in photography and darkroom skills. I've photographed all kinds of people, events, and spaces, and done so as a part of larger web and technology projects.
+    </p>
+
+    <footer id="photography-footer">
+      <nav>
+        <a href="http://www.flickr.com/pandadumpster" class="photo-link">Flickr</a>
+        <a href="http://instagram.com/colinbooks" class="photo-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/brooksco" class="photo-link">LinkedIn</a>
+        <a href="http://colinbrooks.photography/" class="photo-link">Tumblr</a>
       </nav>
 
-      <p id="photo-words">
-        For four years I worked at the Grinnell College Darkroom, managing it for two. I've worked with Youth In Focus, mentoring at-risk youth in photography and darkroom skills. I've photographed all kinds of people, events, and spaces, and done so as a part of larger web and technology projects.
-      </p>
+    </footer>
 
-      <footer id="photography-footer">
-        <nav>
-          <a href="http://www.flickr.com/pandadumpster" class="photo-link">Flickr</a>
-          <a href="http://instagram.com/colinbooks" class="photo-link">Instagram</a>
-          <a href="https://www.linkedin.com/in/brooksco" class="photo-link">LinkedIn</a>
-          <a href="http://colinbrooks.photography/" class="photo-link">Tumblr</a>
-        </nav>
-
-      </footer>
-
-    </div>
   </div>
+</div>
 
-  <div class="photo-wrapper">
-    <div class="masonry">
+<div class="photo-wrapper">
+  <div class="masonry">
 
-      {% for image in images %}
-      <a href="img/{{image.prefix}}_1920.jpg" class="item" data-lightbox="photos" title="{{image.title}}">
-        <img src="img/{{image.prefix}}_1920.jpg" srcset="img/{{image.prefix}}_1920.jpg 1920w, img/{{image.prefix}}_1200.jpg 1200w, img/{{image.prefix}}_800.jpg 800w" sizes="(min-width: 900px) 33.3vw, (min-width: 700px) 50vw, 100vw" alt="">
-      </a>
-      {% endfor %}
+    {% for image in images %}
+    <a href="img/{{image.prefix}}_1920.jpg" class="item" data-fancybox="photos">
+      <img src="img/{{image.prefix}}_1920.jpg" srcset="img/{{image.prefix}}_1920.jpg 1920w, img/{{image.prefix}}_1200.jpg 1200w, img/{{image.prefix}}_800.jpg 800w" sizes="(min-width: 900px) 33.3vw, (min-width: 700px) 50vw, 100vw" alt="">
+    </a>
+    {% endfor %}
 
-    </div>
   </div>
 </div>
 

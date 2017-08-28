@@ -66,6 +66,9 @@ $(document).ready(function() {
 		}, (i + 1) * 80);
 	});
 
+	// Lightbox
+	$.fancybox.defaults.buttons = [ 'close' ];
+
 	// Development page
 
     // Scrolling navbar for non-mobile sizes
@@ -77,9 +80,9 @@ $(document).ready(function() {
 					element: $('#waypoint'),
 					handler: function(direction) {
 						if (direction == 'down') {
-							$("#full-nav").fadeIn();
+							$(".full-nav").fadeIn();
 						} else {
-							$("#full-nav").fadeOut();
+							$(".full-nav").fadeOut();
 						}
 
 					},
@@ -88,7 +91,7 @@ $(document).ready(function() {
 			}
 		},  
 		unmatch : function() {
-			// $("#full-nav").hide();
+			// $(".full-nav").hide();
 		}
 
 	});
@@ -97,7 +100,7 @@ $(document).ready(function() {
 	var $root = $('html, body');
 
 	// For the active link and my name, prevent it from reloading the page and instead scroll to the top
-	$("#full-nav .active, #full-nav-name").on('click', function(event){     
+	$(".full-nav .active, .full-nav__name").on('click', function(event){     
 		event.preventDefault();
 
 		$root.animate({
