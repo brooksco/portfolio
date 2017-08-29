@@ -6,15 +6,13 @@ h3,
 h4, 
 h5, 
 h6 {
-	font-family: 'Raleway', sans-serif;
+	font-family: $sans-serif-font;
 	font-weight: 500;
 }
 
-p {
-	font-family: 'Georgia', serif;
-}
-
 body {
+	font-family: $serif-font;
+
 	&.black {
 		background: black;
 	}
@@ -131,6 +129,17 @@ body {
 	background-position: center;
 }
 
+#main-name {
+	font-family: $sans-serif-font;
+	font-size: .85em;
+	opacity: .25;
+	font-weight: 500;
+	position: absolute;
+	right: 1em;
+	bottom: .5em;
+	color: rgba(255, 255, 255, .25);
+}
+
 .safari {
 	position: inherit;
 
@@ -183,6 +192,7 @@ body {
 .footer-links {
 	margin: 3em 0;
 	text-align: center;
+	font-family: 'Helvetica', sans-serif;
 
 	a {
 		display: inline-block;
@@ -206,7 +216,7 @@ footer {
 	small {
 		padding: .25em 0;
 		color: #555;
-		font-family: "Georgia", serif;
+		font-family: $serif-font;
 		display: block;
 		text-align: center;
 	}
@@ -216,7 +226,7 @@ footer {
 	padding: .25em 0;
 	font-size: 80%;
 	color: #555;
-	font-family: "Georgia", serif;
+	font-family: $serif-font;
 	display: block;
 	text-align: center;
 
@@ -424,35 +434,35 @@ footer {
  		float: left;
 
  		@include breakpoint(small only) {
-			display: none;
-		}
-	}
+ 			display: none;
+ 		}
+ 	}
 
-	nav {
-		text-align: right;
+ 	nav {
+ 		text-align: right;
 
-		@include breakpoint(small only) {
-			text-align: left;
-			margin-left: .5em;
-		}
-	}
+ 		@include breakpoint(small only) {
+ 			text-align: left;
+ 			margin-left: .5em;
+ 		}
+ 	}
 
-	@include breakpoint(small only) {
-		margin-top: 1.25em;
-		margin-bottom: .75em;
-	}
-}
+ 	@include breakpoint(small only) {
+ 		margin-top: 1.25em;
+ 		margin-bottom: .75em;
+ 	}
+ }
 
-.photo-link {
-	padding: 0 .5em;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 700;
+ .photo-link {
+ 	padding: 0 .5em;
+ 	font-family: $sans-serif-font;
+ 	font-weight: 700;
 
-	&:last-of-type {
-		padding-right: 0;
-	}
+ 	&:last-of-type {
+ 		padding-right: 0;
+ 	}
 
-}
+ }
 
 // Masonry
 .photo-wrapper {
@@ -565,7 +575,8 @@ footer {
 	}
 }
 
-#smallCodeHeadWrapper, #smallMeWrapper {
+#smallCodeHeadWrapper, 
+#smallMeWrapper {
 	width: 100px;
 	margin: .5em 1em .5em 0em;
 	float: left;
@@ -608,7 +619,7 @@ footer {
 .recent-section {
 	h5 {
 		font-weight: normal;
-		font-family: 'Georgia', serif;
+		font-family: $serif-font;
 		font-size: 1em;
 	}
 
@@ -713,7 +724,7 @@ footer {
 
 #skill-list {
 	list-style: none;
-	font-family: "Raleway", sans-serif;
+	font-family: $sans-serif-font;
 	font-weight: 300;
 	font-size: 1.25em;
 }
@@ -750,7 +761,7 @@ footer {
 
 // About page
 
-#main-header {
+.main-header-wrapper {
 	width: 100%;
 	max-width: none;
 	background: $grey;
@@ -761,6 +772,59 @@ footer {
 		padding: 1.5em;
 		margin-bottom: 1.25em;
 		margin-top: $mobile-nav-height;
+	}
+}
+
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__links {
+		font-family: 'Helvetica', sans-serif;
+
+		a {
+			color: $blue;
+			margin: 0 .5em;
+			font-weight: 600;
+			text-transform: uppercase;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&:hover {
+				opacity: .75;
+			}
+
+		}
+
+		.active {
+			opacity: .5;
+		}
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	@include breakpoint(medium down) {
+		flex-direction: column;
+		align-items: left;
+	}
+
+	@include breakpoint(medium only) {
+		&__links {
+			margin-top: 1em;
+		}
+	}
+
+	@include breakpoint(small only) {
+		align-items: center;
 	}
 }
 
@@ -785,7 +849,7 @@ footer {
 		color: $blue;
 		padding: 0 .75em;
 		text-transform: uppercase;
-		font-family: 'Raleway', sans-serif;
+		font-family: $sans-serif-font;
 		font-weight: 500;
 
 		&:hover {
@@ -809,6 +873,24 @@ footer {
 		text-transform: none;
 		color: black;
 	}
+
+	&--thesis {
+		white-space: nowrap;
+
+		ul {
+			float: none;
+			display: flex;
+			justify-content: center;
+		}
+
+		@include breakpoint(medium down) {
+			font-size: .8em;
+		}
+
+		@media (max-width: 799px) {
+			visibility: hidden;
+		}
+	}
 }
 
 .mobile-nav {
@@ -822,14 +904,14 @@ footer {
 
 	background: black;
 	color: white;
-	opacity: .9;
+	opacity: 1;
 	height: $mobile-nav-height;
 
 	a {
 		color: white;
 		padding: 0 .5em;
 		text-transform: uppercase;
-		font-family: 'Raleway', sans-serif;
+		font-family: $sans-serif-font;
 		font-size: .9em;
 		font-weight: 500;
 		opacity: .5;
@@ -855,56 +937,23 @@ footer {
 		}
 	}
 
+	&--fixed {
+		position: absolute;
+	}
+
 	@include breakpoint(small only) {
 		display: inherit;
 	}
 
 }
 
-.header-links {
-	display: inherit;
-	float: right;
-	margin-top: -2.5em;
-
-	a {
-		color: $blue;
-		margin: 0 .5em;
-		font-weight: 600;
-		text-transform: uppercase;
-
-		&:first-child {
-			margin-left: 0;
-		}
-
-		&:last-child {
-			margin-right: 0;
-		}
-
-		&:hover {
-			opacity: .75;
-		}
-
-	}
-
-	.active {
-		opacity: .5;
-	}
-
-	@include breakpoint(medium down) {
-		float: none;
-		margin-top: .75em;
-	}
-
-	@include breakpoint(small only) {
-		display: none;
-	}
-}
-
 #about-text {
 	padding-right: 6em;
+	margin-top: 1em;
 
 	@include breakpoint(small only) {
 		padding-right: 1em;
+		margin-top: 0;
 
 		h2 {
 			font-size: 1.75em;
@@ -952,20 +1001,82 @@ footer {
 	}
 }
 
-#cv {
+.btn {
 	display: inline-block;
 	color: white;
+	font-family: 'Helvetica', sans-serif;
 	font-size: 1.25em;
-	padding: .5em 2.25em;
-	background: $blue;
-	margin: 1em 0;
+	padding: .25em 2em;
+	background: $magenta;
+	margin: 1em .5em 1em 0;
 
 	@include transition(.25s all);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		opacity: .75;
+		color: white;
+	}
+
+	&--light {
+		background: $blue;
 	}
 }
 
 // End about page
+
+// Thesis page
+
+.thesis {
+
+	h2 {
+		margin-bottom: 1em;
+	}
+
+	h3,
+	h4 {
+		margin: 1em 0;
+		text-align: center;
+	}
+
+	h4 {
+		font-family: $serif-font;
+		font-size: 1em;
+		font-weight: bold;
+	}
+
+	&__head {
+		text-align: center;
+	}
+
+	&__references {
+		margin: 5em 0;
+	}
+}
+
+.table-of-contents {
+
+	p {
+		overflow: hidden;
+		white-space: nowrap;
+
+		&:after {
+			content: ".........................................................................................................................................................................................................."
+		}
+	}
+
+	&__level-one {
+		margin-left: 0;
+	}
+
+	&__level-two {
+		margin-left: 2em;
+	}
+
+	&--level-three {
+		margin-left: 4em;
+	}
+}
+
+// End thesis page
 

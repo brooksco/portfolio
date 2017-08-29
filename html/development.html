@@ -1,16 +1,17 @@
 {% set title = "Colin Brooks | Development" %}
 {% include "partials/head.html" %}
 
-<header id="main-header">
+<header class="main-header-wrapper">
   <div class="row">
-    <div class="small-12 columns align-middle">
-      <a href="/">
-        <h2 id="name-header" class="clean-header">
-          <a href="/"><strong>Colin Brooks</strong></a><span class="page-header scene_element_long scene_element--fadein"> | Development</span>
-        </h2>
-      </a>
+    <div class="small-12 columns main-header">
+      <h2 id="name-header" class="clean-header">
+        <a href="/">
+          <strong>Colin Brooks</strong>
+        </a>
+        <span class="page-header scene_element_long scene_element--fadein"> | Development</span>
+      </h2>
 
-      <nav class="header-links">
+      <nav class="main-header__links">
         <a href="about">About</a>
         <a href="photography" rel="prerender prefetch">Photography</a>
       </nav>
@@ -29,7 +30,6 @@
       </ul>
     </div>
   </div>
-
 </nav>
 
 <nav class="mobile-nav mobile-nav--light">
@@ -72,7 +72,7 @@
 <!-- Recent work -->
 <div id="recent" class="row dev-section">
 
-<div class="recent-section small-12 medium-4 columns">
+  <div class="recent-section small-12 medium-4 columns">
     <a href="https://howmanyhoppers.com">
       <div class="recent-section_image-wrapper">
         <img src="img/howmanyhoppers.png" />
