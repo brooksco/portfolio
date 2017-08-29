@@ -965,43 +965,37 @@ footer {
 	}
 }
 
-#meWrapper {
+.me {
 	width: auto;
 	max-width: 180px;
 	margin-left: auto;
 	margin-right: 5%;
 
+	img {
+		border-radius: 50%;
+	}
+
+	&__two {
+		margin-left: -4.5em;
+		margin-top: -1em;
+		width: 110px;
+	}
+
+	&__three {
+		margin-left: -10.5em;
+		margin-top: -15em;
+		width: 100px;
+	}
+
+	&__small {
+		width: 100px;
+		margin: .5em 1em .5em 0em;
+		float: left;
+		border-radius: 50%;
+	}
+
 	@include breakpoint(small only) {
 		margin-right: 0;
-	}
-
-	img {
-		border-radius: 50%;
-	}
-	
-}
-
-#meTwo {
-	margin-left: -4.5em;
-	margin-top: -1em;
-	width: 110px;
-
-	transform: rotate(-15deg);
-	-o-transform: rotate(-15deg);
-	-ms-transform: rotate(-15deg);
-	-moz-transform: rotate(-15deg);
-	-webkit-transform: rotate(-15deg);
-}
-
-#meThree {
-	margin-left: -10.5em;
-	margin-top: -15em;
-	width: 100px;
-}
-
-#smallMeWrapper {
-	img {
-		border-radius: 50%;
 	}
 }
 
