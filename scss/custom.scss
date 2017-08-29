@@ -936,10 +936,6 @@ footer {
 		}
 	}
 
-	&--fixed {
-		position: absolute;
-	}
-
 	@include breakpoint(small only) {
 		display: inherit;
 	}
@@ -1027,6 +1023,7 @@ footer {
 // Thesis page
 
 .thesis {
+	overflow: hidden;
 
 	h2 {
 		margin-bottom: 1em;
