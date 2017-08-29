@@ -1,5 +1,13 @@
 // @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,700);
 
+body {
+	font-family: $serif-font;
+
+	&.black {
+		background: black;
+	}
+}
+
 h1, 
 h2, 
 h3, 
@@ -10,12 +18,13 @@ h6 {
 	font-weight: 500;
 }
 
-body {
-	font-family: $serif-font;
+figure {
+	margin: 2em 0;
+}
 
-	&.black {
-		background: black;
-	}
+figcaption {
+	font-size: .9em;
+	margin: 1em 0;
 }
 
 #name-header {
@@ -1041,6 +1050,17 @@ footer {
 		font-weight: bold;
 	}
 
+	table {
+
+		td {
+			border: 1px solid $medium-grey;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
 	&__head {
 		text-align: center;
 	}
@@ -1055,6 +1075,7 @@ footer {
 	p {
 		overflow: hidden;
 		white-space: nowrap;
+		margin-bottom: 0;
 
 		&:after {
 			content: ".........................................................................................................................................................................................................."
@@ -1072,6 +1093,11 @@ footer {
 	&--level-three {
 		margin-left: 4em;
 	}
+}
+
+.table-wrapper {
+	margin: 2em 0;
+	overflow: scroll;
 }
 
 // End thesis page
