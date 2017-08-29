@@ -904,7 +904,6 @@ footer {
 
 	background: black;
 	color: white;
-	opacity: 1;
 	height: $mobile-nav-height;
 
 	a {
@@ -930,7 +929,7 @@ footer {
 	}
 
 	&--light {
-		background: #eee;
+		background: rgba(238, 238, 238, .9);
 
 		a {
 			color: black;
