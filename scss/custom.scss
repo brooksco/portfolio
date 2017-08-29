@@ -37,6 +37,7 @@ body {
 
 	@include breakpoint(small only) {
 		font-size: 1.4em;
+		padding-top: 1.5rem;
 	}
 }
 
@@ -243,10 +244,8 @@ footer {
 	padding-right: 1em;
 
 	@include breakpoint(medium down) {
-		float: none;
-		margin-top: .25em;
 		margin-left: 1em;
-		margin-bottom: .75em;
+		margin-bottom: 1.5em;
 	}
 }
 
@@ -359,20 +358,12 @@ footer {
  	animation-duration: 1s;
  	transition-timing-function: ease-in;
 
- 	#photo-words {
- 		max-width: 50rem;
-
- 		@include breakpoint(small only) {
- 			margin-top: .5em;
- 		}
- 	}
-
  	h2 {
  		margin-left: .75rem;
  		color: white;
 
  		@include breakpoint(small only) {
- 			margin-left: .6rem;
+ 			margin-left: 0;
  		}
 
  		a {
@@ -393,16 +384,7 @@ footer {
  		margin: auto;
  	}
 
- 	@include breakpoint(small only) {
- 		animation-name: fadeIn;
- 		margin-top: $mobile-nav-height;
- 		padding-top: 1.5rem;
- 	}
-
- }
-
- @media (max-width: 699px) {
- 	#name-floater {
+ 	@media (max-width: 699px) {
  		position: inherit;
  		padding-bottom: .75em;
  		animation-name: fadeIn;
@@ -410,11 +392,29 @@ footer {
  		strong {
  			padding: 0 .25em;
  		}
-
  	}
+
+ 	@include breakpoint(small only) {
+ 		animation-name: fadeIn;
+ 		padding: 0;
+ 	}
+
+ }
+
+ @media (max-width: 699px) {
 
  	.photo-wrapper {
  		padding-bottom: 0;
+ 	}
+ }
+
+ #photo-words {
+ 	color: white;
+ 	max-width: 50rem;
+
+ 	@include breakpoint(small only) {
+ 		margin-top: .5em;
+ 		padding: 0 1em;
  	}
  }
 
@@ -448,8 +448,8 @@ footer {
  	}
 
  	@include breakpoint(small only) {
- 		margin-top: 1.25em;
- 		margin-bottom: .75em;
+ 		margin-top: 1.5em;
+ 		margin-bottom: 1.5em;
  	}
  }
 
@@ -769,9 +769,8 @@ footer {
 	padding: 2em;
 
 	@include breakpoint(small only) {
-		padding: 1.5em;
-		margin-bottom: 1.25em;
-		margin-top: $mobile-nav-height;
+		padding: 0;
+		margin: 0;
 	}
 }
 
@@ -895,19 +894,19 @@ footer {
 
 .mobile-nav {
 	display: none;
-	position: fixed;
+	position: sticky;
 	top: 0;
 	z-index: 1;
 	padding: 1em 0;
+	margin-bottom: 1em;
 	width: 100%;
 	text-align: center;
 
-	background: black;
-	color: white;
+	background: rgba(238, 238, 238, .9);
 	height: $mobile-nav-height;
 
 	a {
-		color: white;
+		color: black;
 		padding: 0 .5em;
 		text-transform: uppercase;
 		font-family: $sans-serif-font;
@@ -928,11 +927,12 @@ footer {
 		}
 	}
 
-	&--light {
-		background: rgba(238, 238, 238, .9);
+	&--dark {
+		background: rgba(0, 0, 0, .9);
+		margin-bottom: 0;
 
 		a {
-			color: black;
+			color: white;
 		}
 	}
 

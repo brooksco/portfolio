@@ -2,14 +2,8 @@
 {% set bodyClass = "black" %}
 {% include "partials/head.html" %}
 
-<nav class="mobile-nav">
-  <a href="about">About</a>
-  <a href="development">Development</a>
-  <a href="photography" class="active">Photography</a>
-</nav>
-
 <div id="name-floater">
-  <div>
+  <div class="main-header">
     <h2 id="name-header" class="clean-header">
       <a href="/">
         <strong>Colin Brooks</strong>
@@ -17,11 +11,13 @@
       <span class="page-header scene_element_long scene_element--fadein"> | Photography</span>
     </h2>
 
-    <nav id="photography-header-links" class="header-links">
+    <nav id="photography-header-links" class="main-header__links">
       <a href="about">About</a>
       <a href="development" rel="prerender prefetch">Development</a>
     </nav>
+  </div>
 
+  <div class="hide-for-small-only">
     <p id="photo-words">
       For four years I worked at the Grinnell College Darkroom, managing it for two. I've worked with Youth In Focus, mentoring at-risk youth in photography and darkroom skills. I've photographed all kinds of people, events, and spaces, and done so as a part of larger web and technology projects.
     </p>
@@ -33,9 +29,32 @@
         <a href="https://www.linkedin.com/in/brooksco" class="photo-link">LinkedIn</a>
         <a href="http://colinbrooks.photography/" class="photo-link">Tumblr</a>
       </nav>
-
     </footer>
+  </div>
+</div>
 
+<nav class="mobile-nav mobile-nav--dark">
+  <a href="about">About</a>
+  <a href="development">Development</a>
+  <a href="photography" class="active">Photography</a>
+</nav>
+
+<div class="show-for-small-only">
+  <div class="row">
+    <div class="columns">
+      <p id="photo-words">
+        For four years I worked at the Grinnell College Darkroom, managing it for two. I've worked with Youth In Focus, mentoring at-risk youth in photography and darkroom skills. I've photographed all kinds of people, events, and spaces, and done so as a part of larger web and technology projects.
+      </p>
+
+      <footer id="photography-footer">
+        <nav>
+          <a href="http://www.flickr.com/pandadumpster" class="photo-link">Flickr</a>
+          <a href="http://instagram.com/colinbooks" class="photo-link">Instagram</a>
+          <a href="https://www.linkedin.com/in/brooksco" class="photo-link">LinkedIn</a>
+          <a href="http://colinbrooks.photography/" class="photo-link">Tumblr</a>
+        </nav>
+      </footer>
+    </div>
   </div>
 </div>
 
