@@ -35,25 +35,25 @@ $(document).ready(function() {
 
 	// Index page
 	// Handlers for changing brightness on hover (mouse enter and mouse leave)
-	$( "#main-left" ).mouseenter(function() {
+	$( "#main-left, .mobile-left-text" ).mouseenter(function() {
 		$("#main-right").css({"filter" : "brightness(50%)", "-webkit-filter" : "brightness(50%)" });
 		$("#main-right-video")[0].pause();
 		$("#main-left-video")[0].play();
 	});
 
-	$( "#main-left" ).mouseleave(function() {
+	$( "#main-left, .mobile-left-text" ).mouseleave(function() {
 		$("#main-right").css({"filter" : "brightness(100%)", "-webkit-filter" : "brightness(100%)" });
 		$("#main-right-video")[0].pause();
 		$("#main-left-video")[0].pause();
 	});
 
-	$( "#main-right" ).mouseenter(function() {
+	$( "#main-right, .mobile-right-text" ).mouseenter(function() {
 		$("#main-left").css({"filter" : "brightness(50%)", "-webkit-filter" : "brightness(50%)" });
 		$("#main-left-video")[0].pause();
 		$("#main-right-video")[0].play();
 	});
 
-	$( "#main-right" ).mouseleave(function() {
+	$( "#main-right, .mobile-right-text" ).mouseleave(function() {
 		$("#main-left").css({"filter" : "brightness(100%)", "-webkit-filter" : "brightness(100%)" });
 		$("#main-right-video")[0].pause();
 		$("#main-left-video")[0].pause();
