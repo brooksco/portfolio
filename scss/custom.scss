@@ -6,6 +6,10 @@ body {
 	&.black {
 		background: black;
 	}
+
+	&.index {
+		height: 100vh;
+	}
 }
 
 h1, 
@@ -108,11 +112,28 @@ figcaption {
 
 .text-holder {
 	position: fixed;
-	display: -webkit-flex;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+
+	@include breakpoint(small only) {
+		display: none;
+	}
+}
+
+.mobile-text-holder {
+	display: none;
+
+	@include breakpoint(small only) {
+		transform: translateY(-100vh);
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		color: white;
+		align-items: center;
+		justify-content: space-around;
+	}
 }
 
 #main-left {
@@ -152,24 +173,7 @@ figcaption {
 }
 
 .ios {
-	// display: block;
-	// position: absolute;
-	// top: 25vh;
-	// width: 100%;
-// 	position: fixed;
-// 	height: 50%;
-// 	width: 100%;
-// 	align-items: flex-start;
-// 	justify-content: center;
-// 	flex-direction: column;
-
-// 	h1 {
-// 		width: 100%;
-// 		line-height: 0;
-// 	}
-
-justify-content: initial;
-
+	justify-content: initial;
 }
 
 .video { 

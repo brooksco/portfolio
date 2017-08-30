@@ -1,5 +1,5 @@
 {% set title = "Colin Brooks" %}
-{% set bodyClass = "black" %}
+{% set bodyClass = "black index" %}
 {% include "partials/head.html" %}
 
 <div id="main-holder" class="row">
@@ -9,7 +9,7 @@
       <h1>Developer</h1>
     </div>
 
-    <video id="main-left-video" class="video" muted loop>
+    <video id="main-left-video" class="video" muted loop playsinline autoplay>
       <source src="video/spheres-3.mp4" type="video/mp4" />
       <source src="video/spheres-3.webm" type="video/webm" />
       Sorry, your browser doesn't support HTML5 video.
@@ -21,13 +21,19 @@
       <h1>Photographer</h1>
     </div>
 
-    <video id="main-right-video" class="video" muted loop>
+    <video id="main-right-video" class="video" muted loop playsinline autoplay>
       <source src="video/rainier-trails.mp4" type="video/mp4" />
       <source src="video/rainier-trails.webm" type="video/webm" /> 
       Sorry, your browser doesn't support HTML5 video.
     </video>
   </a>
 
+</div>
+
+<div class="mobile-text-holder">
+ <h1>Developer</h1>
+
+ <h1>Photographer</h1>
 </div>
 
 <a id="main-name" href="about" class="scene_element_long scene_element--fadein">Colin Brooks</a>

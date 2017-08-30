@@ -21,14 +21,15 @@ $(document).ready(function() {
 	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
 	// So replace the videos with images
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$("#main-left-video, #main-right-video").remove();
-		$("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
-		$("#main-right").css({ "background" : "url(img/rainierunderthemoon_1920.jpg) no-repeat bottom center", "background-size" : "cover" });
+		// $("#main-left-video, #main-right-video").remove();
+		// $("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
+		// $("#main-right").css({ "background" : "url(img/rainierunderthemoon_1920.jpg) no-repeat bottom center", "background-size" : "cover" });
 		$("#artdev-video").replaceWith("<img src='img/artdev_loop.gif' alt='' />");
-		// $("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
+		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 
 	} else {
 		// Otherwise fade in the videos
+		$("#main-left-video, #main-right-video").each(function() { $(this)[0].pause(); });
 		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 	}
 
@@ -75,23 +76,23 @@ $(document).ready(function() {
     // Scrolling navbar for non-mobile sizes
     enquire.register("screen and (min-width: 640px)", {
     	match : function() {
-			if ($("#waypoint").length != 0) {
+    		if ($("#waypoint").length != 0) {
 
-				var waypoint = new Waypoint({
-					element: $('#waypoint'),
-					handler: function(direction) {
-						if (direction == 'down') {
-							$(".full-nav").fadeIn();
-						} else {
-							$(".full-nav").fadeOut();
-						}
+    			var waypoint = new Waypoint({
+    				element: $('#waypoint'),
+    				handler: function(direction) {
+    					if (direction == 'down') {
+    						$(".full-nav").fadeIn();
+    					} else {
+    						$(".full-nav").fadeOut();
+    					}
 
-					},
-					offset: 120 
-				});
-			}
-		},  
-		unmatch : function() {
+    				},
+    				offset: 120 
+    			});
+    		}
+    	},  
+    	unmatch : function() {
 			// $(".full-nav").hide();
 		}
 
@@ -118,17 +119,17 @@ $(document).ready(function() {
 	});
 
 	$('a[href*="#"]:not([href="#"])').click(function() {
-    var offset = -60;
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top + offset
-            }, 1000);
-            return false;
-        }
-    }
-});
+		var offset = -60;
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html, body').animate({
+					scrollTop: target.offset().top + offset
+				}, 1000);
+				return false;
+			}
+		}
+	});
 
 });
