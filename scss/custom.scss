@@ -112,6 +112,7 @@ figcaption {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 }
 
 #main-left {
@@ -166,12 +167,9 @@ figcaption {
 // 		width: 100%;
 // 		line-height: 0;
 // 	}
-}
 
-#main-right {
-	.ios {
-		top: 75vh;
-	}
+justify-content: initial;
+
 }
 
 .video { 
