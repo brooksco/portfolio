@@ -21,10 +21,12 @@ $(document).ready(function() {
 	// If it seems like we're on a mobile device, HTML5 video backgrounds aren't likely to work right
 	// So replace the videos with images
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$("#main-left-video, #main-right-video").remove();
-		$("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
-		$("#main-right").css({ "background" : "url(img/rainierunderthemoon_1920.jpg) no-repeat bottom center", "background-size" : "cover" });
-		$("#artdev-video").replaceWith("<img src='img/artdev_loop.gif' alt='' />");
+		// $("#main-left-video, #main-right-video").remove();
+		// $("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
+		// $("#main-right").css({ "background" : "url(img/rainierunderthemoon_1920.jpg) no-repeat bottom center", "background-size" : "cover" });
+		// $("#artdev-video").replaceWith("<img src='img/artdev_loop.gif' alt='' />");
+		$("#main-left-video, #main-right-video").attr('autoplay', true);
+		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 
 	} else {
 		// Otherwise fade in the videos

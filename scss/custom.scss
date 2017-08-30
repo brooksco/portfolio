@@ -214,6 +214,10 @@ figcaption {
 			padding-left: 0;
 		}
 
+		&:hover {
+			opacity: .75;
+		}
+
 		@include breakpoint(small only) {
 			padding: .5em .75em;
 		}
@@ -952,11 +956,13 @@ footer {
 }
 
 #about-text {
-	padding-right: 6em;
-	margin-top: 1em;
+
+	@include breakpoint(medium up) {
+		margin-top: 1em;
+		padding-right: 6em;
+	}
 
 	@include breakpoint(small only) {
-		padding-right: 1em;
 		margin-top: 0;
 
 		h2 {
@@ -999,14 +1005,28 @@ footer {
 	}
 }
 
+.btn-wrapper {
+	@include breakpoint(small only) {
+		display: flex;
+		justify-content: space-between;
+
+		.btn {
+			margin: 1em 0;
+			width: calc(50% - .5em);
+		}
+	}
+}
+
 .btn {
 	display: inline-block;
 	color: white;
 	font-family: 'Helvetica', sans-serif;
 	font-size: 1em;
+	text-align: center;
 	padding: .5em 2em;
 	background: $magenta;
 	margin: 1em .5em 1em 0;
+	border-radius: 10em;
 
 	@include transition(.25s all);
 
