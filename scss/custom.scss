@@ -151,16 +151,26 @@ figcaption {
 }
 
 .ios {
-	position: fixed;
-	height: 50%;
+	display: block;
+	position: absolute;
+	top: 25vh;
 	width: 100%;
-	align-items: flex-start;
-	justify-content: center;
-	flex-direction: column;
+// 	position: fixed;
+// 	height: 50%;
+// 	width: 100%;
+// 	align-items: flex-start;
+// 	justify-content: center;
+// 	flex-direction: column;
 
-	h1 {
-		width: 100%;
-		line-height: 0;
+// 	h1 {
+// 		width: 100%;
+// 		line-height: 0;
+// 	}
+}
+
+#main-right {
+	.ios {
+		top: 75vh;
 	}
 }
 
