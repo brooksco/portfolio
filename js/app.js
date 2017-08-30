@@ -25,11 +25,13 @@ $(document).ready(function() {
 		// $("#main-left").css({ "background" : "url(img/code.jpg) no-repeat bottom center", "background-size" : "cover" });
 		// $("#main-right").css({ "background" : "url(img/rainierunderthemoon_1920.jpg) no-repeat bottom center", "background-size" : "cover" });
 		// $("#artdev-video").replaceWith("<img src='img/artdev_loop.gif' alt='' />");
-		$("#main-left-video, #main-right-video").attr('autoplay', true);
+		// $("#main-left-video, #main-right-video")[0].playsinline = true;
+		// $("#main-left-video, #main-right-video")[0].autoplay = true;
 		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 
 	} else {
 		// Otherwise fade in the videos
+		$("#main-left-video, #main-right-video").each(function() { $(this)[0].pause(); });
 		$("#main-left-video, #main-right-video").css('opacity', 0).animate( { opacity: 1 }, 400);
 	}
 

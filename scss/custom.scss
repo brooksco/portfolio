@@ -82,14 +82,6 @@ figcaption {
 
 	@include transition(.25s all);
 
-	> div {
-		margin: auto;
-		display: -webkit-flex;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
 	h1 {
 		text-align: center;
 		position: fixed;
@@ -159,11 +151,16 @@ figcaption {
 }
 
 .ios {
+	position: fixed;
+	height: 50%;
+	width: 100%;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
 
 	h1 {
-		position: inherit;
-		width: auto;
-		line-height: 1em;
+		width: 100%;
+		line-height: 0;
 	}
 }
 
