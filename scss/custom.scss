@@ -31,6 +31,13 @@ figcaption {
 	margin: 1em 0;
 }
 
+.column,
+.columns {
+	@include breakpoint(small only) {
+		padding: 0 1em;
+	}
+}
+
 #name-header {
 	text-transform: none;
 	margin: 0;
@@ -67,7 +74,6 @@ figcaption {
 }
 
 #main-holder {
-	background: black;
 	height: 100vh;
 	max-width: none;
 }
@@ -76,7 +82,6 @@ figcaption {
 	color: #FFFFFF !important;
 	height: 100%;
 	background: black;
-	display: -webkit-flex;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -146,7 +151,6 @@ figcaption {
 }
 
 #main-left {
-	-webkit-filter: brightness(100%);
 	filter: brightness(100%);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -155,7 +159,6 @@ figcaption {
 
 
 #main-right {
-	-webkit-filter: brightness(100%);
 	filter: brightness(100%);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -505,45 +508,33 @@ footer {
 .masonry {
 	margin: 0;
 	padding: 0;
-	-moz-column-gap: 0;
-	-webkit-column-gap: 0;
 	column-gap: 0;
 }
 
 .item {
+	@include transition(.5s all);
 	display: inline-block;
 	margin: 0;
 	width: 100%;
 	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-
-	@include transition(.5s all);
-
 	opacity: .5;
 }
 
 
 @media only screen and (min-width: 400px) {
 	.masonry {
-		-moz-column-count: 1;
-		-webkit-column-count: 1;
 		column-count: 1;
 	}
 }
 
 @media only screen and (min-width: 700px) {
 	.masonry {
-		-moz-column-count: 2;
-		-webkit-column-count: 2;
 		column-count: 2;
 	}
 }
 
 @media only screen and (min-width: 900px) {
 	.masonry {
-		-moz-column-count: 3;
-		-webkit-column-count: 3;
 		column-count: 3;
 	}
 }
@@ -596,7 +587,7 @@ footer {
 	}
 }
 
-#codeHeadWrapper {
+#code-head-wrapper {
 	width: auto;
 	max-width: 180px;
 	margin: auto;
@@ -606,20 +597,17 @@ footer {
 	}
 }
 
-#smallCodeHeadWrapper, 
-#smallMeWrapper {
+#small-code-head-wrapper {
 	width: 100px;
 	margin: .5em 1em .5em 0em;
 	float: left;
 }
 
-
-#devDescriptionSection {
+.dev-description-wrapper {
 	margin-bottom: 3em;
-	padding: 0 .5rem;
 }
 
-#devDescription {
+.dev-description {
 	@include breakpoint(small only) {
 		display: inline;
 	}
@@ -741,11 +729,6 @@ footer {
 	margin-right: -4px;
 	padding: 0;
 	width: 25%;
-
-	-webkit-transition: all .15s ease-in-out;
-	-moz-transition: all .15s ease-in-out;
-	-ms-transition: all .15s ease-in-out;
-	-o-transition: all .15s ease-in-out;
 	transition: all .15s ease-in-out;
 
 	&:hover {
@@ -932,7 +915,6 @@ footer {
 	margin-bottom: 1em;
 	width: 100%;
 	text-align: center;
-
 	background: rgba(238, 238, 238, .9);
 	height: $mobile-nav-height;
 
@@ -1133,4 +1115,3 @@ footer {
 }
 
 // End thesis page
-
