@@ -998,6 +998,7 @@ footer {
 		margin: .5em 1em .5em 0em;
 		float: left;
 		border-radius: 50%;
+		shape-outside: circle(50%);
 	}
 
 	@include breakpoint(small only) {
