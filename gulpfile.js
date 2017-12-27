@@ -7,6 +7,7 @@ var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var nunjucksRender = require('gulp-nunjucks-render');
 var data = require('gulp-data');
+var fs = require('fs');
 
 var sassPaths = [
 'node_modules/foundation-sites/scss',
@@ -60,7 +61,8 @@ gulp.task('nunjucks', function() {
   return gulp.src('html/**')
    // Adding data to Nunjucks
    .pipe(data(function() {
-    return require('./data.json')
+    // return require('./data.json')
+    return JSON.parse(fs.readFileSync('./data.json'));
   }))
   // Renders template with nunjucks
   .pipe(nunjucksRender({
